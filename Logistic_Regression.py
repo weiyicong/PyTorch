@@ -16,7 +16,9 @@ class LogisticRegressionModel(torch.nn.Module):
         return y_pred
 model=LogisticRegressionModel()
 
+# 损失函数
 criterion=torch.nn.BCELoss(reduction='sum')
+# 优化器
 optimizer=torch.optim.SGD(model.parameters(),lr=0.01)
 
 for epoch in range(1000):
@@ -33,6 +35,7 @@ x_t = torch.Tensor(x).view((200, 1))
 y_t = model(x_t)
 y = y_t.data.numpy()
 plt.plot(x, y)
+# 绘制水平中心线
 plt.plot([0, 10], [0.5, 0.5], c='r')
 plt.xlabel('Hours')
 plt.ylabel('Probability of Pass')
