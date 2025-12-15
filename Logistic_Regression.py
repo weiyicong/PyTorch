@@ -26,7 +26,7 @@ for epoch in range(1000):
 
     optimizer.zero_grad()
     loss.backward()
-    optimizer.step()
+    optimizer.step() 
 
 x = np.linspace(0, 10, 200)
 x_t = torch.Tensor(x).view((200, 1))
